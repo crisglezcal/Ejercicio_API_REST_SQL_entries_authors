@@ -12,12 +12,12 @@ const entriesRoutes = require("./routes/entries.routes") // => Importando rutas 
 // ====================================================== 🛣️ HABILITANDO RUTAS ======================================================
 
 // Ruta raíz - Usar las rutas definidas en entries.routes.js
-app.get("/", (entriesRoutes) => { 
+app.get("/", (req, res) => { 
   res.send("Ruta raíz");
 });
 
 // Rutas habilitadas
-app.use('/api/entries',entriesRoutes); // => http://localhost:3000/api/entries
+app.use('/api', entriesRoutes); // => http://localhost:3000/api/...
 
 // ====================================================== 🚀 INICIAR SERVIDOR ======================================================
 

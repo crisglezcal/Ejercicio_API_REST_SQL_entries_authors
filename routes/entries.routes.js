@@ -14,10 +14,10 @@ router.post('/setup/insert-entries', entriesController.insertEntries);          
 router.put('/setup/unique-title-constraint', entriesController.addUniqueTitleConstraint);  // PUT http://localhost:3000/api/setup/unique-title-constraint
 
 // -----------------------------------------------------
-// RUTAS DE ENTRIES (Publicaciones)
+// RUTAS DE ENTRIES (Publicaciones) 
 // -----------------------------------------------------
-router.get('/entries', entriesController.getAllEntries);                            // GET http://localhost:3000/api/entries
-router.get('/entries/author/:email', entriesController.getEntriesByEmail);          // GET http://localhost:3000/api/entries/author/alejandru@thebridgeschool.es
+router.get('/entries', entriesController.getAllEntries);                            // GET http://localhost:3000/api/entries (TODAS las entries)
+router.get('/entries/author/:email', entriesController.getEntriesByEmail);          // GET http://localhost:3000/api/entries/author/alejandru@thebridgeschool.es (por EMAIL)
 router.get('/entries/search/:email', entriesController.getEntriesByAuthorEmail);    // GET http://localhost:3000/api/entries/search/birja@thebridgeschool.es
 router.get('/entries/title/:title', entriesController.getEntryByTitle);             // GET http://localhost:3000/api/entries/title/Noticia: SOL en Madrid
 router.post('/entries', entriesController.createEntry);                             // POST http://localhost:3000/api/entries
@@ -25,10 +25,10 @@ router.put('/entries/title/:title', entriesController.updateEntryByTitle);      
 router.delete('/entries/title/:title', entriesController.deleteEntryByTitle);       // DELETE http://localhost:3000/api/entries/title/Noticia: SOL en Madrid
 
 // -----------------------------------------------------
-// RUTAS DE AUTHORS (Autores)
+// RUTAS DE AUTHORS (Autores) - CORREGIDAS
 // -----------------------------------------------------
-router.get('/authors', entriesController.getAllAuthors);                            // GET http://localhost:3000/api/authors
-router.get('/authors/email/:email', entriesController.getAuthorByEmail);            // GET http://localhost:3000/api/authors/email/alejandru@thebridgeschool.es
+router.get('/authors', entriesController.getAllAuthors);                            // GET http://localhost:3000/api/authors (TODOS los autores)
+router.get('/authors/email/:email', entriesController.getAuthorByEmail);            // GET http://localhost:3000/api/authors/email/alejandru@thebridgeschool.es (por EMAIL)
 router.post('/authors', entriesController.createAuthor);                            // POST http://localhost:3000/api/authors
 router.put('/authors/email/:email', entriesController.updateAuthorByEmail);         // PUT http://localhost:3000/api/authors/email/alejandru@thebridgeschool.es
 router.delete('/authors/email/:email', entriesController.deleteAuthorByEmail);      // DELETE http://localhost:3000/api/authors/email/alejandru@thebridgeschool.es
