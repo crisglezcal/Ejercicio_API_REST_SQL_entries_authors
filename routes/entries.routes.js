@@ -1,3 +1,5 @@
+// ##################################################### 5️⃣ entries.routes.js → Define las URLs de la API #####################################################
+
 const express = require('express'); // 1. Importa el framework Express => Trae toda la funcionalidad de Express a tu archivo
 const entriesController = require("../controllers/entries.controller"); // 2. Importa el controlador de entries => Trae todas las funciones que manejan la lógica de entries
 const router = express.Router(); // 3. Crea un router de Express => Crea un objeto "router" que te permite definir rutas

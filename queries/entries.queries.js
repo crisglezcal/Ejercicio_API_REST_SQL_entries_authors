@@ -1,3 +1,5 @@
+// ##################################################### 2️⃣ entries.queries.js → Solo las consultas SQL puras (strings) #####################################################
+
 const queries = {
 
     // Crear tabla authors
@@ -43,6 +45,12 @@ const queries = {
     ('El rayo gana la champions','Victoria por goleada en la final de la champions',(SELECT id_author FROM authors WHERE email='albertu@thebridgeschool.es'),'Deportes'),
     ('Amanece Madrid lleno de arena','La calima satura Madrid de arena. Pérdidas millonarias',(SELECT id_author FROM authors WHERE email='birja@thebridgeschool.es'),'Sucesos'),
     ('Descubren el motor de agua','Fin de la gasolina. A partir de ahora usaremos agua en nuestros coches',(SELECT id_author FROM authors WHERE email='alvaru@thebridgeschool.es'),'Ciencia');`,
+
+    // Crear nueva entry
+    createEntry: `
+    INSERT INTO entries (title, content, date, id_author, category) 
+    VALUES ($1, $2, $3, $4, $5) 
+    RETURNING *;`, // $1 => title, $2 => content, $3 => date, $4 => id_author, $5 => category
 
     // Buscar entries por email usuario
     getEntriesByAuthorEmail: `SELECT * FROM entries WHERE id_author=(SELECT id_author FROM authors WHERE email=$1);`, // $1 => email
