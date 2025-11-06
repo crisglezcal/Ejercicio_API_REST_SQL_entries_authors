@@ -1,7 +1,7 @@
 // ##################################################### 3️⃣ entries.model.js → Gestiona los datos con la base de datos #####################################################
 
 const pool = require('../config/db_pgsql'); // Importar el pool de conexiones
-const queries = require('../queries/entries.queries'); // Importar las consultas SQL
+const queries = require('../queries/queries'); // Importar las consultas SQL
 
 // ====================================================== 🗃️ MODELO DE DATOS ======================================================
 
